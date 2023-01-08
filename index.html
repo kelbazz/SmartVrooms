@@ -8,15 +8,15 @@
         margin: 0;
 
         height: 100vh;
-    
+
         display: flex;
-        flex-direction: column;
         gap: 5px;
 
         align-items: center;
         justify-content: center;
 
         background: #0f1020;
+        color: #0099ff;
       }
 
       #canvas {
@@ -26,8 +26,10 @@
         background: #0f1020;
       }
 
-      button, input {
+      button,
+      input {
         border: #0099ff solid 2px;
+        border-top: none;
         color: #0099ff;
         background-color: #0f1020;
 
@@ -35,7 +37,7 @@
       }
 
       button:disabled {
-        border: #0099ff77 solid 2px;
+        border-color: #0099ff77;
         color: #0099ff77;
       }
 
@@ -43,7 +45,7 @@
         color: #0099ff77;
       }
     </style>
-    <title>Game Template</title>
+    <title>Smart Vrooms</title>
 
     <script defer src="mocorgo.js"></script>
     <script defer src="userInput.js"></script>
@@ -54,11 +56,19 @@
     <script defer src="game_template.js"></script>
   </head>
   <body>
-    <canvas id="canvas" tabindex="0" width="600" height="480"></canvas>
-    <button disabled class="best-brain">Copy best brain</button>
-    <span>
-      <input placeholder="Brain data..." type="text" class="load-inp" />
-      <button class="load-from">Load from a brain</button>
-    </span>
+    <div style="width:40vw;text-align:justify">
+      <b>Welcome to Smart Vrooms.</b><br /><br />
+      This is a modified version of Smart Caps from danielszabo88. You can load
+      brains, or look my trained one. If you want to see the caps learning, you
+      can type "zero" in the field and click the load button.
+    </div>
+    <div>
+      <canvas id="canvas" tabindex="0" width="600" height="480"></canvas>
+      <button disabled class="best-brain">Copy best brain</button>
+      <span>
+        <input placeholder="Brain data..." type="text" class="load-inp" />
+        <button class="load-from">Load from a brain</button>
+      </span>
+    </div>
   </body>
 </html>

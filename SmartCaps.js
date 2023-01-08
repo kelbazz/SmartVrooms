@@ -1,7 +1,11 @@
 class SmartCaps extends Capsule {
   constructor(x1, y1, x2, y2, r, m, data) {
     super(x1, y1, x2, y2, r, m);
-    this.brain = data ? NeuralNetwork.from(data) : new NeuralNetwork(5, 5, 4);
+    this.brain = data
+      ? data !== "zero"
+        ? NeuralNetwork.from(data)
+        : new NeuralNetwork(5, 5, 4)
+      : new NeuralNetwork(5, 5, 4);
     this.layer = -1;
     this.friction = 0.06;
     this.angFriction = 0.05;
