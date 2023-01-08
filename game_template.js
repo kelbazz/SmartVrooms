@@ -2,13 +2,14 @@
 // creating the starting objects and variables before starting the main loop
 // for example:
 
-
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
 const xhr = new XMLHttpRequest();
 xhr.open("GET", "./model.json", false);
 xhr.send();
+
+window.addEventListener("hashchange", () => location.reload());
 
 const model = JSON.stringify(JSON.parse(xhr.responseText));
 
