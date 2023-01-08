@@ -113,6 +113,12 @@ function gameLogic() {
     btnBestBrain.disabled = false;
     btnBestBrain.onclick = () => {
       navigator.clipboard.writeText(JSON.stringify(bestCaps.brain));
+
+      let txt = btnBestBrain.innerHTML;
+
+      btnBestBrain.innerHTML = "Copied";
+
+      setTimeout(() => (btnBestBrain.innerHTML = txt), 1000);
     };
 
     nextGen();
