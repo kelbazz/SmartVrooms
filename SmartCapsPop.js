@@ -10,12 +10,12 @@ class SmartCapsPop {
     }
 
     // creating a population with the size of the popSize property
-    init(str){
+    init(data){
         for(let i=0; i<this.popSize; i++){
             if(this.caps[i]){
                 this.caps[i].remove()
             }
-            this.caps[i] = new SmartCaps(this.startingPoint.x, this.startingPoint.y+10, this.startingPoint.x, this.startingPoint.y-10, 10, 5, str)
+            this.caps[i] = new SmartCaps(this.startingPoint.x, this.startingPoint.y+10, this.startingPoint.x, this.startingPoint.y-10, 10, 5, data)
         }
     }
 

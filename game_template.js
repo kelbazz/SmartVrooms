@@ -1,8 +1,16 @@
 // STEP 1: setting up the environment
 // creating the starting objects and variables before starting the main loop
 // for example:
+
+
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
+
+const xhr = new XMLHttpRequest();
+xhr.open("GET", "./model.json", false);
+xhr.send();
+
+const model = JSON.stringify(JSON.parse(xhr.responseText));
 
 let raceWalls = [];
 raceWalls.push(new Wall(240, 120, 120, 120));
@@ -51,7 +59,8 @@ let stepCounter = 0;
 let smartCapsPop = new SmartCapsPop(20);
 let capsAreMoving = false;
 
-function start(str = null) {
+function start(str) {
+  if (!str) str = model;
   smartCapsPop.generation = 1;
   capsAreMoving = true;
   smartCapsPop.init(str);
